@@ -1,6 +1,7 @@
 package repository;
 
 import domain.Product;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,10 +17,14 @@ public class ProductRepository {
 
     public boolean existsByName(String name) {
         return products.values().stream()
-                .anyMatch(tasks -> tasks.getName().equalsIgnoreCase(name));
+                .anyMatch(product -> product.getName().equalsIgnoreCase(name));
     }
 
     public Product findProductById(Long id) {
         return products.get(id);
+    }
+
+    public Product deleteProductById(Long id) {
+        return products.remove(id);
     }
 }

@@ -3,10 +3,10 @@ package service.validation;
 import domain.Product;
 import java.math.BigDecimal;
 
-public class ProductPercentValidationRule implements ProductValidationPercentRule {
+public class ProductPercentValidationRule implements ProductValidationRule {
 
     @Override
-    public void validatePercent (Product product){
+    public void validate (Product product){
         checkNotNull(product);
         BigDecimal bigDecimalNull = new BigDecimal("0");
         BigDecimal bigDecimalThousand = new BigDecimal("100");

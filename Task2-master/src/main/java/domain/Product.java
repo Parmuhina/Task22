@@ -9,12 +9,11 @@ public class Product {
     private BigDecimal price;
     private String category;
     private BigDecimal percent;
-    private String text;
+    private Long countID;
 
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -22,7 +21,6 @@ public class Product {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -30,7 +28,6 @@ public class Product {
     public BigDecimal getPrice() {
         return price;
     }
-
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
@@ -38,7 +35,6 @@ public class Product {
     public String getCategory(){
         return category;
     }
-
     public String setCategory(String category){
         return this.category=category;
     }
@@ -46,17 +42,8 @@ public class Product {
     public BigDecimal getPercent(){
         return percent;
     }
-
     public BigDecimal setPercent (BigDecimal percent){
         return this.percent=percent;
-    }
-
-    public String getText(){
-        return text;
-    }
-
-    public String setText (String text){
-        return this.text=text;
     }
 
     @Override
