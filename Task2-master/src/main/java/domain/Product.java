@@ -1,8 +1,9 @@
 package domain;
 
+import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.util.Objects;
-
+@Repository
 public class Product {
     private Long id;
     private String name;

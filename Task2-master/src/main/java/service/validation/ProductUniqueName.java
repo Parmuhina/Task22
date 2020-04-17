@@ -8,7 +8,7 @@ public class ProductUniqueName implements ProductValidationRule {
 
         @Override
         public void validate (Product product){
-        checkNotNull(product);
+            checkNotNull(product);
         boolean unique = repository.existsByName(product.getName());
         if (unique == true) {
             throw new ProductValidationException("Task name must be unique.");

@@ -22,4 +22,8 @@ public class Service {
     public Product deleteProductById (Long id){
         return repository.deleteProductById(id);
     }
+
+    public Boolean existsByName (String name){
+        return repository.existsByName(name);
+    }
 }

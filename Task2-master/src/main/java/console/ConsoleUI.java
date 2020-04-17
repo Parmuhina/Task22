@@ -3,6 +3,7 @@ package console;
 
 import domain.Product;
 import service.Service;
+import service.validation.ProductNameValidationRule;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
@@ -39,6 +40,7 @@ public class ConsoleUI {
                 }
             } catch (Exception e) {
                 System.out.println("Incorrect choice. Please insert number more than 0 and less than 6.");
+
             }
         }
     }
@@ -46,11 +48,10 @@ public class ConsoleUI {
     private void createProduct() {
         Product product = new Product();
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter product name: ");
         String name = scanner.nextLine();
         product.setName(name);
-
-
 
         while ((product.getName().length() < 3) || (product.getName().length() > 32)) {
 

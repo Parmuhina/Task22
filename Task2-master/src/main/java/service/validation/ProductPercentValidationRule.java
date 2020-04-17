@@ -10,6 +10,7 @@ public class ProductPercentValidationRule implements ProductValidationRule {
         checkNotNull(product);
         BigDecimal bigDecimalNull = new BigDecimal("0");
         BigDecimal bigDecimalThousand = new BigDecimal("100");
+
         if (product.getPercent().compareTo(bigDecimalNull)<0 ||
                 product.getPercent().compareTo(bigDecimalThousand)>0){
             throw new ProductValidationException("Percent is not correct. Please enter percent that is more than 0 " +
