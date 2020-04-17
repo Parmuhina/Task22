@@ -45,11 +45,12 @@ public class ConsoleUI {
 
     private void createProduct() {
         Product product = new Product();
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter product name: ");
         String name = scanner.nextLine();
         product.setName(name);
+
+
 
         while ((product.getName().length() < 3) || (product.getName().length() > 32)) {
 
@@ -57,7 +58,7 @@ public class ConsoleUI {
                     "Enter new name.");
 
             if ((product.getName().length() < 3) || (product.getName().length() > 32)) {
-                name = scanner.nextLine();
+              name = scanner.nextLine();
                 product.setName(name);
             }
         }
@@ -81,6 +82,7 @@ public class ConsoleUI {
             String category = scanner.nextLine();
             product.setCategory(category);
         }
+
         while (userInput1 != 1 && userInput1 != 2) {
             System.out.println("You entered incorrect value. " +
                     "If you want to enter category, press 1, if you don`t want to enter category, press 2.");
@@ -109,6 +111,7 @@ public class ConsoleUI {
         Long id = productService.createProduct(product);
         System.out.println("Result: " + id);
         System.out.println("Chose your next step.");
+
     }
 
     private void findProductID() {
@@ -149,13 +152,7 @@ public class ConsoleUI {
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Enter product id to change it: ");
         Long id = scanner1.nextLong();
-        Product product = productService.findProductById(id);
-        product.setPercent(null);
-        product.setName(null);
-        product.setPrice(null);
-        product.setCategory(null);
-        product.setId(null);
+        productService.deleteProductById(id);
     }
-
-
 }
+

@@ -3,9 +3,9 @@ package service.validation;
 import domain.Product;
 import java.math.BigDecimal;
 
-public class ProductPriceValidationRule implements ProductValidationPriceRule {
+public class ProductPriceValidationRule implements ProductValidationRule {
     @Override
-    public void validatePrice(Product product){
+    public void validate(Product product){
         checkNotNull(product);
         BigDecimal bigDecimalNull = new BigDecimal("0");
         if (product.getPrice().compareTo(bigDecimalNull)<=0){
