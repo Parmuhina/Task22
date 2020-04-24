@@ -1,8 +1,9 @@
-package service.validation;
+package shoppingList.service.validation;
 
-import domain.Product;
-import repository.ProductRepository;
-
+import shoppingList.domain.Product;
+import org.springframework.stereotype.Component;
+import shoppingList.repository.ProductRepository;
+@Component
 public class ProductUniqueName implements ProductValidationRule {
     ProductRepository repository = new ProductRepository();
 
