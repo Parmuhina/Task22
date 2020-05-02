@@ -1,18 +1,15 @@
 package shoppingList.console;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import shoppingList.domain.Product;
-import shoppingList.service.Service;
-
+import shoppingList.service.ProductService;
 import java.util.Scanner;
 
 @Component
 public class FindProductIdAction implements Action {
-    private final Service service;
+    private final ProductService service;
 
-    @Autowired
-    public FindProductIdAction(Service service) {
+    public FindProductIdAction(ProductService service) {
         this.service = service;
     }
     @Override

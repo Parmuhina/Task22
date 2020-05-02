@@ -1,17 +1,16 @@
 package shoppingList.console;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
 import shoppingList.domain.Product;
-import shoppingList.service.Service;
+import shoppingList.service.ProductService;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
 @Component
 public class ChangeProductAction implements Action {
-    private final Service service;
+    private final ProductService service;
 
-    @Autowired
-    public ChangeProductAction(Service service){
+    ChangeProductAction(ProductService service){
         this.service = service;
     }
     final int min=1;
@@ -58,6 +57,9 @@ public class ChangeProductAction implements Action {
         System.out.println("Enter product percents: ");
         BigDecimal percent = new BigDecimal(scanner2.nextLine());
         product.setPercent(percent);
+        service.change(id, product);
+
+
     }
     @Override
     public String toString(){
